@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>دليل الأدوات والأوامر الذكية</title>
+    <title>دليل الأدوات والأوامر الذكية | AI Tools & Prompts Directory</title>
     <style>
         :root {
             --bg: #0f172a;
@@ -22,6 +22,20 @@
         .container {
             max-width: 800px;
             margin: 0 auto;
+        }
+        .top-bar {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 10px;
+        }
+        .lang-btn {
+            background: #334155;
+            color: var(--text);
+            border: 1px solid var(--accent);
+            padding: 6px 14px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
         }
         header {
             text-align: center;
@@ -80,9 +94,13 @@
 <body>
 
 <div class="container">
+    <div class="top-bar">
+        <button class="lang-btn" onclick="toggleLanguage()" id="langToggleBtn">English</button>
+    </div>
+
     <header>
-        <h1>دليل الأدوات والأوامر الذكية</h1>
-        <p>مجموعة مختارة ومحدثة من أفضل أدوات الذكاء الاصطناعي والأوامر البرمجية</p>
+        <h1 id="title">دليل الأدوات والأوامر الذكية</h1>
+        <p id="subtitle">مجموعة مختارة ومحدثة من أفضل أدوات الذكاء الاصطناعي والأوامر البرمجية</p>
     </header>
 
     <input type="text" id="searchInput" class="search-box" placeholder="ابحث عن أداة أو مجال..." onkeyup="filterCards()">
@@ -93,64 +111,134 @@
         <div class="card">
             <div>
                 <h3>v0.dev</h3>
-                <p>أداة لتوليد واجهات وتصاميم المواقع والتطبيقات عبر الذكاء الاصطناعي وبسرعة عالية.</p>
+                <p data-ar="أداة لتوليد واجهات وتصاميم المواقع والتطبيقات عبر الذكاء الاصطناعي وبسرعة عالية." 
+                   data-en="Generates UI designs and web code using AI quickly.">
+                   أداة لتوليد واجهات وتصاميم المواقع والتطبيقات عبر الذكاء الاصطناعي وبسرعة عالية.
+                </p>
             </div>
-            <a href="https://v0.dev" target="_blank" class="btn">زيارة الموقع</a>
+            <a href="https://v0.dev" target="_blank" class="btn btn-link" data-ar="زيارة الموقع" data-en="Visit Site">زيارة الموقع</a>
         </div>
 
         <!-- أداة 2 -->
         <div class="card">
             <div>
                 <h3>ChatGPT</h3>
-                <p>النموذج الأكثر شهرة للمحادثة وكتابة الأكواد والنصوص وحل المشكلات اليومية.</p>
+                <p data-ar="النموذج الأكثر شهرة للمحادثة وكتابة الأكواد والنصوص وحل المشكلات اليومية." 
+                   data-en="Most popular conversational AI for coding, text, and problem solving.">
+                   النموذج الأكثر شهرة للمحادثة وكتابة الأكواد والنصوص وحل المشكلات اليومية.
+                </p>
             </div>
-            <a href="https://chatgpt.com" target="_blank" class="btn">زيارة الموقع</a>
+            <a href="https://chatgpt.com" target="_blank" class="btn btn-link" data-ar="زيارة الموقع" data-en="Visit Site">زيارة الموقع</a>
         </div>
 
         <!-- أداة 3 -->
         <div class="card">
             <div>
                 <h3>Google AI Studio</h3>
-                <p>منصة مجانية من جوجل لبناء وتجربة نماذج الذكاء الاصطناعي وتوليد التطبيقات والأكواد.</p>
+                <p data-ar="منصة مجانية من جوجل لبناء وتجربة نماذج الذكاء الاصطناعي وتوليد التطبيقات والأكواد." 
+                   data-en="Free prototyping environment by Google for AI models and developer apps.">
+                   منصة مجانية من جوجل لبناء وتجربة نماذج الذكاء الاصطناعي وتوليد التطبيقات والأكواد.
+                </p>
             </div>
-            <a href="https://aistudio.google.com" target="_blank" class="btn">زيارة الموقع</a>
+            <a href="https://aistudio.google.com" target="_blank" class="btn btn-link" data-ar="زيارة الموقع" data-en="Visit Site">زيارة الموقع</a>
         </div>
 
         <!-- أداة 4 -->
         <div class="card">
             <div>
                 <h3>Claude AI</h3>
-                <p>نموذج ذكي متقدم جداً في تحليل المستندات المعقدة وكتابة المقالات البرمجية والدقيقة.</p>
+                <p data-ar="نموذج ذكي متقدم جداً في تحليل المستندات المعقدة وكتابة المقالات البرمجية والدقيقة." 
+                   data-en="Advanced AI model specialized in complex document analysis and coding.">
+                   نموذج ذكي متقدم جداً في تحليل المستندات المعقدة وكتابة المقالات البرمجية والدقيقة.
+                </p>
             </div>
-            <a href="https://claude.ai" target="_blank" class="btn">زيارة الموقع</a>
+            <a href="https://claude.ai" target="_blank" class="btn btn-link" data-ar="زيارة الموقع" data-en="Visit Site">زيارة الموقع</a>
         </div>
 
         <!-- أمر جاهز 1 -->
         <div class="card">
             <div>
-                <h3>أمر: كتابة تغطية عمل</h3>
-                <p>أمر جاهز لتوليد خطاب تغطية (Cover Letter) احترافي ومخصص للتقديم على الوظائف.</p>
+                <h3 data-ar="أمر: كتابة تغطية عمل" data-en="Prompt: Cover Letter Generator">أمر: كتابة تغطية عمل</h3>
+                <p data-ar="أمر جاهز لتوليد خطاب تغطية (Cover Letter) احترافي ومخصص للتقديم على الوظائف." 
+                   data-en="Ready prompt to generate tailored professional cover letters for job applications.">
+                   أمر جاهز لتوليد خطاب تغطية (Cover Letter) احترافي ومخصص للتقديم على الوظائف.
+                </p>
             </div>
-            <button class="btn" onclick="copyText(this, 'اكتب لي خطاب تغطية مخصص لمهمة تطوير تطبيقات وتصميم واجهات مستخدم مع شرح الخبرات البرمجية بخطوات واضحة.')">نسخ الأمر</button>
+            <button class="btn btn-copy" 
+                    data-ar="نسخ الأمر" 
+                    data-en="Copy Prompt"
+                    data-prompt-ar="اكتب لي خطاب تغطية مخصص لمهمة تطوير تطبيقات وتصميم واجهات مستخدم مع شرح الخبرات البرمجية بخطوات واضحة."
+                    data-prompt-en="Write a professional cover letter tailored for a software development role highlighting key technical skills and experience clearly."
+                    onclick="handleCopy(this)">نسخ الأمر</button>
         </div>
 
         <!-- أمر جاهز 2 -->
         <div class="card">
             <div>
-                <h3>أمر: تصحيح وتحسين الكود</h3>
-                <p>أمر لإيجاد الأخطاء البرمجية واقتراح أفضل الممارسات لتحسين أداء الكود.</p>
+                <h3 data-ar="أمر: تصحيح وتحسين الكود" data-en="Prompt: Code Review & Refactor">أمر: تصحيح وتحسين الكود</h3>
+                <p data-ar="أمر لإيجاد الأخطاء البرمجية واقتراح أفضل الممارسات لتحسين أداء الكود." 
+                   data-en="Prompt to find code bugs and suggest best practices for optimization.">
+                   أمر لإيجاد الأخطاء البرمجية واقتراح أفضل الممارسات لتحسين أداء الكود.
+                </p>
             </div>
-            <button class="btn" onclick="copyText(this, 'قم براجعة الكود التالي، حدد الثغرات والأخطاء البرمجية إن وجدت، وقم بإعادة كتابته بأسلوب احترافي وسريع:')">نسخ الأمر</button>
+            <button class="btn btn-copy" 
+                    data-ar="نسخ الأمر" 
+                    data-en="Copy Prompt"
+                    data-prompt-ar="قم بمراجعة الكود التالي، حدد الثغرات والأخطاء البرمجية إن وجدت، وقم بإعادة كتابته بأسلوب احترافي وسريع:"
+                    data-prompt-en="Review the following code, identify any bugs or vulnerabilities, and refactor it for best performance:"
+                    onclick="handleCopy(this)">نسخ الأمر</button>
         </div>
 
     </div>
 
     <footer>
-        <p>تم الإنشاء بواسطة دليل الأدوات الذكية &copy; 2026</p>
+        <p id="footerText">تم الإنشاء بواسطة دليل الأدوات الذكية &copy; 2026</p>
     </footer>
 </div>
 
 <script>
+    let currentLang = 'ar';
+
+    const translations = {
+        ar: {
+            title: "دليل الأدوات والأوامر الذكية",
+            subtitle: "مجموعة مختارة ومحدثة من أفضل أدوات الذكاء الاصطناعي والأوامر البرمجية",
+            searchPlaceholder: "ابحث عن أداة أو مجال...",
+            footerText: "تم الإنشاء بواسطة دليل الأدوات الذكية &copy; 2026",
+            langBtnText: "English",
+            copiedText: "تم النسخ!"
+        },
+        en: {
+            title: "AI Tools & Prompts Directory",
+            subtitle: "A curated collection of top AI tools and developer prompts",
+            searchPlaceholder: "Search tools or categories...",
+            footerText: "Created by AI Tools Directory &copy; 2026",
+            langBtnText: "العربية",
+            copiedText: "Copied!"
+        }
+    };
+
+    function toggleLanguage() {
+        currentLang = currentLang === 'ar' ? 'en' : 'ar';
+        const t = translations[currentLang];
+
+        document.documentElement.lang = currentLang;
+        document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+
+        document.getElementById('title').innerText = t.title;
+        document.getElementById('subtitle').innerText = t.subtitle;
+        document.getElementById('searchInput').placeholder = t.searchPlaceholder;
+        document.getElementById('footerText').innerHTML = t.footerText;
+        document.getElementById('langToggleBtn').innerText = t.langBtnText;
+
+        // Translate text inside cards
+        document.querySelectorAll('[data-ar]').forEach(el => {
+            if (el.dataset[currentLang]) {
+                el.innerText = el.dataset[currentLang];
+            }
+        });
+    }
+
     function filterCards() {
         let input = document.getElementById('searchInput').value.toLowerCase();
         let cards = document.getElementsByClassName('card');
@@ -161,10 +249,12 @@
         }
     }
 
-    function copyText(btn, text) {
-        navigator.clipboard.writeText(text);
+    function handleCopy(btn) {
+        const textToCopy = currentLang === 'ar' ? btn.dataset.promptAr : btn.dataset.promptEn;
+        navigator.clipboard.writeText(textToCopy);
+        
         let originalText = btn.innerText;
-        btn.innerText = "تم النسخ!";
+        btn.innerText = translations[currentLang].copiedText;
         setTimeout(() => btn.innerText = originalText, 1500);
     }
 </script>
