@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دليل الأدوات والأوامر الذكية</title>
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card-bg: #1e293b;
+            --text: #f8fafc;
+            --accent: #38bdf8;
+            --muted: #94a3b8;
+        }
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h1 { color: var(--accent); margin-bottom: 8px; }
+        .search-box {
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: 8px;
+            border: 1px solid #334155;
+            background: var(--card-bg);
+            color: var(--text);
+            font-size: 16px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 16px;
+        }
+        .card {
+            background: var(--card-bg);
+            border: 1px solid #334155;
+            border-radius: 10px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .card h3 { margin: 0 0 8px 0; font-size: 18px; color: var(--accent); }
+        .card p { margin: 0 0 16px 0; font-size: 14px; color: var(--muted); line-height: 1.4; }
+        .btn {
+            background: var(--accent);
+            color: #0f172a;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>دليل الأدوات الذكية</h1>
+        <p>مجموعة مختارة من أفضل الأدوات والأوامر البرمجية</p>
+    </header>
+
+    <input type="text" id="searchInput" class="search-box" placeholder="ابحث عن أداة أو مجال..." onkeyup="filterCards()">
+
+    <div class="grid" id="cardsGrid">
+        <!-- أداة 1 -->
+        <div class="card">
+            <div>
+                <h3>v0.dev</h3>
+                <p>أداة لبناء واجهات المستخدم وتصاميم الموقع باستخدام الذكاء الاصطناعي وبسرعة عالية.</p>
+            </div>
+            <a href="https://v0.dev" target="_blank" class="btn">زيارة الموقع</a>
+        </div>
+
+        <!-- أداة 2 -->
+        <div class="card">
+            <div>
+                <h3>أمر: كتابة تغطية عمل</h3>
+                <p>امر جاهز تولد به خطاب تغطية (Cover Letter) احترافي ومخصص لأي وظيفة.</p>
+            </div>
+            <button class="btn" onclick="copyText(this, 'اكتب لي خطاب تغطية لمهمة تطوير تطبيقات...')">نسخ الأمر</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function filterCards() {
+        let input = document.getElementById('searchInput').value.toLowerCase();
+        let cards = document.getElementsByClassName('card');
+
+        for (let i = 0; i < cards.length; i++) {
+            let text = cards[i].innerText.toLowerCase();
+            cards[i].style.display = text.includes(input) ? "" : "none";
+        }
+    }
+
+    function copyText(btn, text) {
+        navigator.clipboard.writeText(text);
+        let originalText = btn.innerText;
+        btn.innerText = "تم النسخ!";
+        setTimeout(() => btn.innerText = originalText, 1500);
+    }
+</script>
+
+</body>
+</html>
