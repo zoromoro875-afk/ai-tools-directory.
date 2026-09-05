@@ -65,6 +65,15 @@
             cursor: pointer;
             text-decoration: none;
             text-align: center;
+            display: inline-block;
+        }
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            color: var(--muted);
+            font-size: 14px;
+            border-top: 1px solid #334155;
+            padding-top: 20px;
         }
     </style>
 </head>
@@ -72,18 +81,19 @@
 
 <div class="container">
     <header>
-        <h1>دليل الأدوات الذكية</h1>
-        <p>مجموعة مختارة من أفضل الأدوات والأوامر البرمجية</p>
+        <h1>دليل الأدوات والأوامر الذكية</h1>
+        <p>مجموعة مختارة ومحدثة من أفضل أدوات الذكاء الاصطناعي والأوامر البرمجية</p>
     </header>
 
     <input type="text" id="searchInput" class="search-box" placeholder="ابحث عن أداة أو مجال..." onkeyup="filterCards()">
 
     <div class="grid" id="cardsGrid">
+        
         <!-- أداة 1 -->
         <div class="card">
             <div>
                 <h3>v0.dev</h3>
-                <p>أداة لبناء واجهات المستخدم وتصاميم الموقع باستخدام الذكاء الاصطناعي وبسرعة عالية.</p>
+                <p>أداة لتوليد واجهات وتصاميم المواقع والتطبيقات عبر الذكاء الاصطناعي وبسرعة عالية.</p>
             </div>
             <a href="https://v0.dev" target="_blank" class="btn">زيارة الموقع</a>
         </div>
@@ -91,12 +101,53 @@
         <!-- أداة 2 -->
         <div class="card">
             <div>
-                <h3>أمر: كتابة تغطية عمل</h3>
-                <p>امر جاهز تولد به خطاب تغطية (Cover Letter) احترافي ومخصص لأي وظيفة.</p>
+                <h3>ChatGPT</h3>
+                <p>النموذج الأكثر شهرة للمحادثة وكتابة الأكواد والنصوص وحل المشكلات اليومية.</p>
             </div>
-            <button class="btn" onclick="copyText(this, 'اكتب لي خطاب تغطية لمهمة تطوير تطبيقات...')">نسخ الأمر</button>
+            <a href="https://chatgpt.com" target="_blank" class="btn">زيارة الموقع</a>
         </div>
+
+        <!-- أداة 3 -->
+        <div class="card">
+            <div>
+                <h3>Google AI Studio</h3>
+                <p>منصة مجانية من جوجل لبناء وتجربة نماذج الذكاء الاصطناعي وتوليد التطبيقات والأكواد.</p>
+            </div>
+            <a href="https://aistudio.google.com" target="_blank" class="btn">زيارة الموقع</a>
+        </div>
+
+        <!-- أداة 4 -->
+        <div class="card">
+            <div>
+                <h3>Claude AI</h3>
+                <p>نموذج ذكي متقدم جداً في تحليل المستندات المعقدة وكتابة المقالات البرمجية والدقيقة.</p>
+            </div>
+            <a href="https://claude.ai" target="_blank" class="btn">زيارة الموقع</a>
+        </div>
+
+        <!-- أمر جاهز 1 -->
+        <div class="card">
+            <div>
+                <h3>أمر: كتابة تغطية عمل</h3>
+                <p>أمر جاهز لتوليد خطاب تغطية (Cover Letter) احترافي ومخصص للتقديم على الوظائف.</p>
+            </div>
+            <button class="btn" onclick="copyText(this, 'اكتب لي خطاب تغطية مخصص لمهمة تطوير تطبيقات وتصميم واجهات مستخدم مع شرح الخبرات البرمجية بخطوات واضحة.')">نسخ الأمر</button>
+        </div>
+
+        <!-- أمر جاهز 2 -->
+        <div class="card">
+            <div>
+                <h3>أمر: تصحيح وتحسين الكود</h3>
+                <p>أمر لإيجاد الأخطاء البرمجية واقتراح أفضل الممارسات لتحسين أداء الكود.</p>
+            </div>
+            <button class="btn" onclick="copyText(this, 'قم براجعة الكود التالي، حدد الثغرات والأخطاء البرمجية إن وجدت، وقم بإعادة كتابته بأسلوب احترافي وسريع:')">نسخ الأمر</button>
+        </div>
+
     </div>
+
+    <footer>
+        <p>تم الإنشاء بواسطة دليل الأدوات الذكية &copy; 2026</p>
+    </footer>
 </div>
 
 <script>
